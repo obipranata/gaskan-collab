@@ -25,7 +25,7 @@ Route::get('/form-user', [HomeController::class, 'create'])->name("form-user");
 Route::post('/store', [HomeController::class, 'store'])->name("store");
 
 Route::get('/', [AspirasiController::class, 'index'])->name("dashboard");
-Route::get('/detail', [AspirasiController::class, 'create'])->name("detail-aspirasi");
+Route::get('/detail', [AspirasiController::class, 'detail'])->name("detail-aspirasi");
 
 Route::any("signup", [AuthController::class, "signup"])->name("signup")->middleware(["noAuth"]);
 Route::any("login", [AuthController::class, "login"])->name("login")->middleware(["noAuth"]);
