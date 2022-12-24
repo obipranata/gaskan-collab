@@ -2,9 +2,9 @@
 @section('title', 'Beranda || Aspirasi')
 
 @section('content')
-<div class="flex container flex-wrap gap-14">
+<div class="flex container flex-wrap gap-14 mt-20 mb-20">
     @foreach ($aspirasi as $item)
-    <div class=" py-20">
+    <div class=" pt-2">
         <div class="max-w-sm mt-10 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 hover:delay-150 hover:scale-110 transition-all duration-500">
             <a href="{{ route('detail-aspirasi', $item->email ) }}">
                 <img class="rounded-t-lg w-96 h-64 object-cover " src="{{asset('foto/' . $item->foto)}}" alt="" />
