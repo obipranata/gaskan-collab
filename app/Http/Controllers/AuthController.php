@@ -34,7 +34,7 @@ class AuthController extends Controller
         }
         session()->put("logged", true);
         session()->put("idUser", $user->id);
-        return redirect()->route("home");
+        return redirect('/');
     }
 
     public function signup(Request $request)
