@@ -4,6 +4,11 @@
 @section('content')
 <section class="pt-24">
     <div class="container">
+      @if ($message = Session::get('success'))
+      <div class="text-gray-700">
+          <h3>{{ $message }}</h3>
+          </div>
+      @endif
         <h1 class="text-center text-4xl mt-5 text-gray-600 uppercase">Create Admin</h1>
         <form method="POST" action="{{url('/add-admin')}}" enctype="multipart/form-data" class="bg-gray-200 mt-10 w-[40%] rounded-xl mx-auto flex flex-col gap-4 py-5 px-7">
             @csrf

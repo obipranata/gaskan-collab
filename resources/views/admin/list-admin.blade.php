@@ -8,8 +8,8 @@
             <a href="{{route('add-admin')}}">Add Admin</a>
         </div>
         @if ($message = Session::get('success'))
-        <div class="text-gray-700">
-            <strong>{{ $message }}</strong>
+            <div class="text-gray-700">
+            <h3>{{ $message }}</h3>
             </div>
         @endif
         <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
