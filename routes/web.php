@@ -21,7 +21,8 @@ use App\Http\Controllers\AuthController;
 // });
 
 Route::get('/', [HomeController::class, 'index'])->name("home");
-Route::get('/form-user', [HomeController::class, 'create'])->name("form-user");
+Route::get('/aspirasi', [HomeController::class, 'index_aspirasi'])->name("index");
+Route::get('/aspirasi/create', [HomeController::class, 'create'])->name("create");
 Route::post('/store', [HomeController::class, 'store'])->name("store");
 
 Route::get('/', [AspirasiController::class, 'index'])->name("dashboard");

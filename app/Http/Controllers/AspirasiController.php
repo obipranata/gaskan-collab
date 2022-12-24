@@ -9,10 +9,8 @@ class AspirasiController extends Controller
 {
     public function index()
     {
-        $aspirasi = Aspirasi::query()->get();
-        return view('admin.aspirasi', [
-            'aspirasi' => $aspirasi
-        ]);
+        $aspirasi = Aspirasi::all();
+        return view('admin.aspirasi', compact('aspirasi'));
     }
 
     public function detail()

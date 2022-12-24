@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Aspirasi;
 
 class HomeController extends Controller
 {
@@ -11,12 +12,33 @@ class HomeController extends Controller
         return view('login');
     }
 
-    public function create()
+    public function index_aspirasi()
     {
-        return view('form-user');
+        $aspirasi = Aspirasi::all();
+        return view('aspirasi.index', compact('aspirasi'));
     }
 
     public function store(Request $request)
     {
+        $img = $request->file('foto');
+        $filename = time(). "-". $img->getClientOriginalName();
+        $img->move('foto/', $filename);
+
+        Aspirasi::create(
+            [
+                "nama" => $request->nama,
+                "email" => $request->email,
+                "foto" => $filename,
+                "cerita" => $request->cerita,
+                "isRead" => 0
+            ]
+        );
+        return redirect('/aspirasi')->with('success', 'data berhasil dikiri');
+    }
+
+    public function create()
+    {
+        $aspirasi = Aspirasi::all();
+        return view('aspirasi.create', compact('aspirasi'));
     }
 }
