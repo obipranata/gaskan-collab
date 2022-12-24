@@ -10,6 +10,6 @@
         @yield('content')
     <script src="{{ asset('./node_modules/flowbite/dist/flowbite.js')}}"></script>
     </div>
-
+    @vite('resources/js/app.js')
 </body>
 </html>
