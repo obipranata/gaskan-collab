@@ -26,8 +26,10 @@ Route::get('/aspirasi/create', [HomeController::class, 'create'])->name("create"
 Route::post('/store', [HomeController::class, 'store'])->name("store");
 
 Route::get('/', [AspirasiController::class, 'index'])->name("dashboard");
-Route::get('/detail', [AspirasiController::class, 'detail'])->name("detail-aspirasi");
+Route::get('/detail/{email}', [AspirasiController::class, 'detail'])->name("detail-aspirasi");
 
-Route::any("signup", [AuthController::class, "signup"])->name("signup")->middleware(["noAuth"]);
+Route::get("/list-admin", [AuthController::class, "index"])->name("list-admin")->middleware(["withAuth"]);
+Route::any("/add-admin", [AuthController::class, "addAdmin"])->name("add-admin")->middleware(["withAuth"]);
 Route::any("login", [AuthController::class, "login"])->name("login")->middleware(["noAuth"]);
 Route::any("logout", [AuthController::class, "logout"])->name("logout")->middleware(["withAuth"]);
+Route::get("/destroy/{id}", [AuthController::class, 'destroy'])->name('destroy')->middleware(["withAuth"]);

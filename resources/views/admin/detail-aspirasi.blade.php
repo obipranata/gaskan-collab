@@ -1,6 +1,6 @@
 @extends('templates.main')
 
-@section('title', 'Detail Aspirasi')
+{{-- @section('title', 'Detail Aspirasi')
 @section('content')
 <section class="pt-28">
     <a href="{{ route('dashboard') }}" class="inline-flex items-center px-4 py-2 mr-3 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
@@ -19,4 +19,29 @@
         </div>
     </div>
 </section>
+@endsection --}}
+@section('title', 'Detail Aspirasi')
+
+@section('content')
+<div class="mt-20 text-center font-poppins text-xl font-bold text-gray-500">
+    <h1>Create Aspirasi</h1>
+</div>
+<div class="bg-gray-200 mt-10 p-5">
+
+    <form method="POST" action="{{url('/store')}}" enctype="multipart/form-data">
+        @csrf
+        <div class="mb-6 ">
+            Nama : {{$aspirasi->nama}}
+        </div>
+        <div class="mb-6 ">
+          <img class="rounded-t-lg w-96 h-64 object-cover " src="{{asset('foto/' . $aspirasi->foto)}}" alt="" />
+        </div>
+        
+
+        <div class="mb-6">
+            {{$aspirasi->cerita}}
+        </div>
+    </form>
+
+</div>
 @endsection
