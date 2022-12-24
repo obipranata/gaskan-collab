@@ -21,7 +21,7 @@ use App\Http\Controllers\AuthController;
 // });
 
 Route::get('/', [HomeController::class, 'index'])->name("home");
-Route::get('/aspirasi', [HomeController::class, 'index_aspirasi'])->name("index");
+Route::get('/aspirasi', [HomeController::class, 'index_aspirasi'])->name("index")->middleware(["withAuth"]);
 Route::get('/aspirasi/create', [HomeController::class, 'create'])->name("create");
 Route::post('/store', [HomeController::class, 'store'])->name("store");
 
