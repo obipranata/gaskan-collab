@@ -10,7 +10,10 @@
                             LOGIN
                         </div>
 
-                        <form action="{{ route('') }}" method="POST">
+                        @if ($errors->any())
+                            <h1 class="text-danger"> {{$errors->first()}}</h1>
+                        @endif
+                        <form action="{{route('login')}}" method="POST">
                         @csrf
                         {{-- @foreach($errors->all() as $error)
                             {{ $error }}
@@ -27,11 +30,6 @@
                                     class="border border-[#EEE6C3] w-[295px] text-[12px] rounded-lg shadow-inner ml-5 md:ml-10  md:w-[392px]"
                                     placeholder="Please insert your password" required />
                             </div>
-                            <div class="mb-2 mr-5 text-sm font-medium text-right text-blue-600 hover:text-blue-800">
-                                <a href="">
-                                    <p>Lupa Password?</p>
-                                </a>
-                            </div>
                             {{-- <div class="flex items-start mb-6">
                                 <div class="flex items-center h-5">
                                     <input id="remember" type="checkbox" value=""
@@ -46,11 +44,6 @@
                                     class="text-gray-500 bg-[#EEE6C3] hover:bg-[#FFE15D] px-8 py-2 font-poopins font-bold rounded-lg">
                                     Login
                                 </button>
-                            </div>
-                            <div class="mt-8 pb-16 px-10 text-sm font-medium  text-center text-blue-600 hover:text-blue-800">
-                                <a href="{{  ('')}}">
-                                    <p>Belum punya akun? Daftar</p>
-                                </a>
                             </div>
                         </form>
                     </div>

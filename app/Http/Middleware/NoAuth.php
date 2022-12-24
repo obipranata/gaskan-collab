@@ -21,7 +21,7 @@ class NoAuth
         }
 
         if (session()->get("logged", false)) {
-            return redirect()->route("home");
+            return redirect('/');
         }
         return $next($request);
     }

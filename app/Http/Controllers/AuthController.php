@@ -11,7 +11,7 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         if ($request->method() == "GET") {
-            return view("login");
+            return view("login.login");
         }
 
         $email = $request->input('email');
@@ -34,7 +34,7 @@ class AuthController extends Controller
         }
         session()->put("logged", true);
         session()->put("idUser", $user->id);
-        return redirect()->route("home");
+        return redirect('/');
     }
 
     public function signup(Request $request)
