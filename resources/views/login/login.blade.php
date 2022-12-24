@@ -15,7 +15,7 @@
                 <p class="font-bold msg-error cursor-pointer">X</p>
             </div>
             @endif
-            <form action="{{route('login')}}" method="POST" class="flex flex-col gap-4">
+            <form action="{{route('login')}}" method="POST" class="flex flex-col gap-7">
             @csrf
                 <div class="flex flex-col gap-4">
                     <div class="w-full flex flex-col gap-1">
@@ -33,7 +33,7 @@
                 </div>
                 <div class="flex gap-4">
                     <button type="submit"
-                        class="text-gray-500 bg-[#EEE6C3] hover:bg-[#FFE15D] px-8 py-2 font-poopins font-bold rounded-lg">
+                        class="text-gray-500 bg-[#EEE6C3] hover:bg-[#FFE15D] w-[90px] h-[44px] font-poopins font-bold rounded-lg">
                         Login
                     </button>
                     <a href="{{ url ('/') }}" class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
