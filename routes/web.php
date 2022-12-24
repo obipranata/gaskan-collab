@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AspirasiController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,7 @@ Route::post('/store', [HomeController::class, 'store'])->name("store");
 
 Route::get('/', [AspirasiController::class, 'index'])->name("dashboard");
 Route::get('/detail', [AspirasiController::class, 'create'])->name("detail-aspirasi");
+
+Route::any("signup", [AuthController::class, "signup"])->name("signup")->middleware(["noAuth"]);
+Route::any("login", [AuthController::class, "login"])->name("login")->middleware(["noAuth"]);
+Route::any("logout", [AuthController::class, "logout"])->name("logout")->middleware(["withAuth"]);

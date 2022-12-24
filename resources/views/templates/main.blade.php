@@ -10,6 +10,5 @@
         @yield('content')
     <script src="{{ asset('./node_modules/flowbite/dist/flowbite.js')}}"></script>
     </div>
-
 </body>
 </html>
