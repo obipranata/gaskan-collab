@@ -6,7 +6,6 @@
 </head>
 <body>
     <div class="container">
-        @include('templates.navbar')
         @yield('content')
     <script src="{{ asset('./node_modules/flowbite/dist/flowbite.js')}}"></script>
     </div>
