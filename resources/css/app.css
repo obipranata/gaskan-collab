@@ -15,3 +15,16 @@
 html {
     font-family: "Inter", arial;
 }
+
+.scroll-bar::-webkit-scrollbar {
+    width: 10px;
+}
+
+.scroll-bar::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.scroll-bar::-webkit-scrollbar-thumb {
+    background: grey;
+    border-radius: 20px;
+}

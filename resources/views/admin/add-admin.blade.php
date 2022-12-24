@@ -4,14 +4,15 @@
 @section('content')
 <section class="pt-24">
     <div class="container">
-      @if ($message = Session::get('success'))
-      <div class="text-gray-700">
-          <h3>{{ $message }}</h3>
-          </div>
-      @endif
         <h1 class="text-center text-4xl mt-5 text-gray-600 uppercase">Create Admin</h1>
         <form method="POST" action="{{url('/add-admin')}}" enctype="multipart/form-data" class="bg-gray-200 mt-10 w-[40%] rounded-xl mx-auto flex flex-col gap-4 py-5 px-7">
             @csrf
+            @if ($message = Session::get('success'))
+              <div class="msg-parent flex justify-between items-center bg-green-400 py-3 px-4 mt-2 rounded-lg mb-1 text-white">
+                  <h3>{{ $message }}</h3>
+                  <p class="font-bold msg-error cursor-pointer">X</p>
+              </div>
+            @endif
             <div class="w-full">
                 <label for="nama" class="block mb-3 text-sm font-medium text-gray-900 dark:text-white">Nama</label>
                 <input type="text" id="nama" name="nama" class="w-full shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="nama" required>

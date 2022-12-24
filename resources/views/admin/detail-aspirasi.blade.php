@@ -1,57 +1,21 @@
 @extends('templates.main')
-
-{{-- @section('title', 'Detail Aspirasi')
-@section('content')
-<section class="pt-28">
-    <a href="{{ route('dashboard') }}" class="inline-flex items-center px-4 py-2 mr-3 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-        <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd"></path></svg>
-    </a>
-    <div class="container">
-        <h1 class="text-center uppercase text-4xl font-light mb-10">Detail Aspirasi</h1>
-        <div class="flex flex-col mx-auto items-center bg-white border rounded-lg shadow-md md:flex-row md:max-w-xl dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-            <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src="https://picsum.photos/200/300" alt="">
-            <div class="flex flex-col justify-between p-4 leading-normal">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Hanif Akmaludin</h5>
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                <p class="mb-3 font-light text-gray-700 dark:text-gray-400">Tanggal dibuat : 12 Desember 2022</p>
-                <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Hapus</a>
-            </div>
-        </div>
-    </div>
-</section>
-@endsection --}}
 @section('title', 'Detail Aspirasi')
-
 @section('content')
-
 <div class="container">
-    
-    <div class="mt-28 text-center font-poppins text-xl font-bold text-gray-500">
-        <h1>Detail Aspirasi</h1>
+    <div class="mt-28 text-center text-xl font-light text-gray-500">
+        <h1 class="text-center text-4xl mt-5 text-gray-600 uppercase">Detail Aspirasi</h1>
     </div>
-    <div class="flex container flex-wrap gap-14">
-        <div class=" py-5 mx-auto">
-            <div class="w-[750px] mt-5 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 hover:delay-150 hover:scale-110 transition-all duration-500">
-                <a href="#">
-                    <img class="rounded-t-lg w-96 h-64 object-covert mx-auto " src="{{asset('foto/' . $aspirasi->foto)}}" alt="" />
-                </a>
-                <div class="p-5">
-                    <a href="#">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                            Nama : {{$aspirasi->nama}}
-                        </h5>
-                    </a>
-                    <p class="mb-2 font-normal text-gray-700 dark:text-gray-400">
-                        {{ $aspirasi->cerita }}
-                    </p>
-                    <div class="mt-5">
-                        <a class="bg-blue-700 hover:bg-blue-900 p-3 rounded-lg text-white" href="{{ url ('/aspirasi') }} ">Back</a>
-                    </div>
-                </div>
+    <div class="container flex pt-10 gap-10">
+        <div class="card-img w-[40%]">
+            <img src="{{asset('foto/' . $aspirasi->foto)}}" alt="" class="h-[400px] w-full object-cover">
+        </div>
+        <div class="card-description w-[60%]">
+            <h5 class="text-3xl mb-3">Nama : {{$aspirasi->nama}}</h5>
+            <p class="text-xl mb-3 overflow-y-scroll h-[290px] scroll-bar">{{ $aspirasi->cerita }}</p>
+            <div class="mt-5">
+                <a class="bg-blue-700 hover:bg-blue-900 p-3 rounded-lg text-white" href="{{ url ('/aspirasi') }} ">Back</a>
             </div>
         </div>
     </div>
-    
 </div>
-
 @endsection
