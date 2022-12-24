@@ -13,8 +13,12 @@ class AspirasiController extends Controller
         return view('admin.aspirasi', compact('aspirasi'));
     }
 
-    public function detail()
+    public function detail($email)
     {
-        return view('admin.detail-aspirasi');
+        $aspirasi = Aspirasi::query()->where('email', $email)->first();
+
+        $aspirasi->update(['isRead' => 1]);
+
+        return view('admin.detail-aspirasi', compact('aspirasi'));
     }
 }

@@ -8,6 +8,12 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
+    public function index()
+    {
+        $users = User::all();
+        return view('admin.list-admin', compact('users'));
+    }
+
     public function login(Request $request)
     {
         if ($request->method() == "GET") {
@@ -37,10 +43,10 @@ class AuthController extends Controller
         return redirect('/');
     }
 
-    public function signup(Request $request)
+    public function addAdmin(Request $request)
     {
         if ($request->method() == "GET") {
-            return view('signup');
+            return view('admin.add-admin');
         }
 
         $nama = $request->nama;

@@ -1,10 +1,11 @@
 @extends('templates.main')
-@section('title', 'Aspirasi')
+@section('title', 'List Admin')
 
 @section('content')
 <div class="container py-20 ">
-        <h2 class="text-center text-[45px] text-gray-600">Aspirasi</h2>
+        <h2 class="text-center text-[45px] text-gray-600">List Admin</h2>
         <div class="my-10 font-neuton font-semibold text-white text-2xl">
+            <a class="text-black" href="{{route('add-admin')}}">Add Admin</a>
         </div>
         <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
@@ -20,42 +21,24 @@
                             Email
                         </th>
                         <th scope="col" class="py-3 px-6 text-center">
-                            Foto
-                        </th>
-                        <th scope="col" class="py-3 px-6 text-center">
-                            Cerita
-                        </th>
-                        <th scope="col" class="py-3 px-6 text-center">
-                            Read
-                        </th>
-                        <th scope="col" class="py-3 px-6 text-center">
-                            Detail
+                            Aksi
                         </th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($aspirasi as $item)
+                    @foreach ($users as $item)
                     <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
                         <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white text-center">
                             {{$loop->iteration}}
                         </th>
                         <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            {{(strlen($item->nama) > 5) ? substr ($item ->nama, 0, 15). "..." : $item ->nama}}
+                            {{$item ->nama}}
                         </th>
                         <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            {{(strlen($item->email) > 5) ? substr ($item ->email, 0, 15). "..." : $item ->email}}
-                        </th>
-                        <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white rounded-3xl text-center">
-                            <img src="{{asset('foto/'.$item->foto)}}" alt="" width="250">
+                            {{$item->email}}
                         </th>
                         <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            {{(strlen($item->cerita) > 5) ? substr ($item ->cerita, 0, 15). "..." : $item ->cerita}}
-                        </th>
-                        <th scope="row" class="py-4 px-6 font-medium {{$item ->isRead === 1 ? 'text-green-500' : 'text-red-500'}} whitespace-nowrap dark:text-white">
-                            {{$item ->isRead === 1 ? 'Telah dibaca' : 'Belum Dibaca'}}
-                        </th>
-                        <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            <a href="{{route('detail-aspirasi', $item->email)}}">Detail</a>
+                            <a href="">Hapus</a>
                         </th>
                     </tr>
                     @endforeach
