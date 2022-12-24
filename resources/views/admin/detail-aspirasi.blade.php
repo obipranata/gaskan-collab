@@ -23,25 +23,35 @@
 @section('title', 'Detail Aspirasi')
 
 @section('content')
-<div class="mt-20 text-center font-poppins text-xl font-bold text-gray-500">
-    <h1>Create Aspirasi</h1>
+
+<div class="container">
+    
+    <div class="mt-28 text-center font-poppins text-xl font-bold text-gray-500">
+        <h1>Detail Aspirasi</h1>
+    </div>
+    <div class="flex container flex-wrap gap-14">
+        <div class=" py-5 mx-auto">
+            <div class="w-[750px] mt-5 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 hover:delay-150 hover:scale-110 transition-all duration-500">
+                <a href="#">
+                    <img class="rounded-t-lg w-96 h-64 object-covert mx-auto " src="{{asset('foto/' . $aspirasi->foto)}}" alt="" />
+                </a>
+                <div class="p-5">
+                    <a href="#">
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                            Nama : {{$aspirasi->nama}}
+                        </h5>
+                    </a>
+                    <p class="mb-2 font-normal text-gray-700 dark:text-gray-400">
+                        {{ $aspirasi->cerita }}
+                    </p>
+                    <div class="mt-5">
+                        <a class="bg-blue-700 hover:bg-blue-900 p-3 rounded-lg text-white" href="{{ url ('/aspirasi') }} ">Back</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
 </div>
-<div class="bg-gray-200 mt-10 p-5">
 
-    <form method="POST" action="{{url('/store')}}" enctype="multipart/form-data">
-        @csrf
-        <div class="mb-6 ">
-            Nama : {{$aspirasi->nama}}
-        </div>
-        <div class="mb-6 ">
-          <img class="rounded-t-lg w-96 h-64 object-cover " src="{{asset('foto/' . $aspirasi->foto)}}" alt="" />
-        </div>
-        
-
-        <div class="mb-6">
-            {{$aspirasi->cerita}}
-        </div>
-    </form>
-
-</div>
 @endsection

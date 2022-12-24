@@ -61,7 +61,8 @@ class AuthController extends Controller
 
         User::query()->create($payload);
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'data berhasil ditambahkan');
+        ;
     }
 
     public function logout(Request $request)

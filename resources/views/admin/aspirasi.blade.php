@@ -64,7 +64,7 @@
             <div class="p-5">
                 <a href="#">
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                        {{(strlen($item->nama) > 5) ? substr ($item -> nama, 0, 2). "..." : $item -> product_name}}
+                        {{(strlen($item->nama) > 2) ? substr ($item -> nama, 0, 2). "..." : $item -> product_name}}
                     </h5>
                 </a>
                 <p class="mb-2 font-normal text-gray-700 dark:text-gray-400">

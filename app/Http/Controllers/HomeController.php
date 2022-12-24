@@ -33,7 +33,7 @@ class HomeController extends Controller
                 "isRead" => 0
             ]
         );
-        return redirect('/aspirasi')->with('success', 'data berhasil dikiri');
+        return redirect('/aspirasi')->with('success', 'data berhasil dikirim');
     }
 
     public function create()

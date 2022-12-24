@@ -2,10 +2,10 @@
 @section('title', 'Create Aspirasi')
 
 @section('content')
-<div class="mt-20 text-center font-poppins text-xl font-bold text-gray-500">
+<div class="mt-28 text-center font-poppins text-xl font-bold text-gray-500">
     <h1>Create Aspirasi</h1>
 </div>
-<div class="bg-gray-200 mt-10 p-5">
+<div class="bg-gray-200 mt-10 mb-10 p-5 mx-auto w-[500px] rounded-2xl">
 
     <form method="POST" action="{{url('/store')}}" enctype="multipart/form-data">
         @csrf
@@ -24,7 +24,7 @@
         </div>
 
         <div class="mb-6">
-            <label for="cerita" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">cerita</label>
+            <label for="cerita" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Cerita</label>
             <textarea id="cerita" name="cerita" rows="4" class="block p-2.5 w-[450px] text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Insert your cerita" required></textarea>
         </div>
 
