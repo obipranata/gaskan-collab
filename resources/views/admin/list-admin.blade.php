@@ -7,6 +7,11 @@
         <div class="my-10 font-neuton font-semibold text-white text-2xl">
             <a class="text-black" href="{{route('add-admin')}}">Add Admin</a>
         </div>
+        @if ($message = Session::get('success'))
+        <div class="text-gray-700">
+            <strong>{{ $message }}</strong>
+            </div>
+        @endif
         <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">

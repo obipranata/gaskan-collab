@@ -6,6 +6,11 @@
         <h2 class="text-center text-[45px] text-gray-600 mt-10 font-neuton">Aspirasi Rakyat</h2>
         <div class="my-10 font-neuton font-semibold text-white text-2xl">
         </div>
+        @if ($message = Session::get('success'))
+        <div class="text-gray-700">
+            <strong>{{ $message }}</strong>
+            </div>
+        @endif
         <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-300 dark:bg-gray-700 dark:text-gray-400">
