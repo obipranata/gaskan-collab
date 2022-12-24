@@ -10,7 +10,7 @@
                             LOGIN
                         </div>
 
-                        <form action="{{ route('') }}" method="POST">
+                        <form action="" method="POST">
                         @csrf
                         {{-- @foreach($errors->all() as $error)
                             {{ $error }}

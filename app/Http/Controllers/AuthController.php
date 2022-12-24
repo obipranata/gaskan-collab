@@ -11,7 +11,7 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         if ($request->method() == "GET") {
-            return view("login");
+            return view("login.login");
         }
 
         $email = $request->input('email');
