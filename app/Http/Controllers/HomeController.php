@@ -14,7 +14,7 @@ class HomeController extends Controller
 
     public function index_aspirasi()
     {
-        $aspirasi = Aspirasi::all();
+        $aspirasi = Aspirasi::orderBy('id', 'DESC')->get();
         return view('aspirasi.index', compact('aspirasi'));
     }
 
@@ -33,7 +33,7 @@ class HomeController extends Controller
                 "isRead" => 0
             ]
         );
-        return redirect('/aspirasi')->with('success', 'data berhasil dikirim');
+        return redirect('/')->with('success', 'data berhasil dikirim');
     }
 
     public function create()

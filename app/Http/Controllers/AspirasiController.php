@@ -9,7 +9,7 @@ class AspirasiController extends Controller
 {
     public function index()
     {
-        $aspirasi = Aspirasi::all();
+        $aspirasi = Aspirasi::orderBy('id', 'DESC')->get();
         return view('admin.aspirasi', compact('aspirasi'));
     }
 
